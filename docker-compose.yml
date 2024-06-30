@@ -3,7 +3,7 @@ services:
     image: trueosiris/vrising
     environment:
       - TZ=America/New_York
-      - SERVERNAME=she-make-my-v-rise
+      - SERVERNAME=SheMakeMyVRise
       - WORLDNAME=vardew-world
     volumes:
       - type: bind
