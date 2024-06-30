@@ -1,0 +1,23 @@
+services:
+  vrising:
+    image: trueosiris/vrising
+    environment:
+      - TZ=America/New_York
+      - SERVERNAME=she-make-my-v-rise
+      - WORLDNAME=vardew-world
+    volumes:
+      - type: bind
+        source: ./server
+        target: /mnt/vrising/server
+        bind:
+          create_host_path: true
+      - type: bind
+        source: ./data
+        target: /mnt/vrising/persistentdata
+        bind:
+          create_host_path: true
+    ports:
+      - '9876:9876/udp'
+      - '9877:9877/udp'
+    restart: unless-stopped
+    network_mode: bridge
